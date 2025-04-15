@@ -38,7 +38,8 @@
       
       if (isNaN(inputUSD)) {
         document.getElementById("resultado").innerText = "Por favor, ingresá un número válido.";
-        return;
+    document.getElementById("aclaracion").innerText = "";
+    return;
       }
 
       const totalUSD = inputUSD + fee;
