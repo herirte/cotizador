@@ -24,15 +24,56 @@
       min-height: 100vh;
       padding: 0;
       text-align: center;
+      position: relative; /* para que las estrellas estén en la capa inferior */
+    }
+
+    /* Efecto estrellas brillando */
+    .estrellas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .estrellas::before,
+    .estrellas::after {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.8) 2px, transparent 3px);
+      background-size: 50px 50px;
+      animation: parpadeo 10s linear infinite;
+      opacity: 0.6;
+    }
+
+    .estrellas::after {
+      animation-delay: 5s;
+      opacity: 0.3;
+    }
+
+    @keyframes parpadeo {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-25px, -25px);
+      }
     }
 
     .container {
-      background-color: rgba(255, 255, 255, 0.5); /* opcional, para que se lea mejor */
+      background-color: rgba(255, 255, 255, 0.5); /* para que se lea mejor el texto */
       padding: 40px;
       border-radius: 20px;
       max-width: 500px;
       width: 90%;
       box-sizing: border-box;
+      z-index: 1; /* encima de las estrellas */
     }
 
     img {
@@ -101,6 +142,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Parte de las estrellas brillando -->
+  <div class="estrellas"></div>
 
   <div class="container">
     <img src="https://i.ibb.co/HTgy72RK/6354.png" alt="logo">
