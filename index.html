@@ -149,7 +149,7 @@
   <div class="container">
     <img src="https://i.ibb.co/HTgy72RK/6354.png" alt="logo">
     
-    <p> ¡Cotizador automático! (*≧ω≦)</p>
+    <p> ¡cotizador automático! (*≧ω≦)</p>
     <input type="number" id="usd" placeholder="Ej: 10.50">
     <button onclick="calcular()">cotizar</button>
 
@@ -164,7 +164,7 @@
       const inputUSD = parseFloat(document.getElementById("usd").value);
 
       if (isNaN(inputUSD)) {
-        document.getElementById("resultado").innerText = "Por favor, ingresá un número válido.";
+        document.getElementById("resultado").innerText = "por favor, ingresá un número válido.";
         document.getElementById("aclaracion").innerText = "";
         return;
       }
@@ -173,10 +173,10 @@
       const totalARS = totalUSD * dolar;
 
       document.getElementById("resultado").innerText = 
-        `Total = $${totalARS.toLocaleString('es-AR')}`;
+        `total = $${totalARS.toLocaleString('es-AR')}`;
 
       document.getElementById("aclaracion").innerText = 
-        "Este es el precio final con el fee incluido.";
+        "este es el precio final con el fee incluido.";
     }
   </script>
 </body>
