@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cotizador Buyee</title>
+  <style>
+    body {
+      background-color: #f6f6f6;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    .resultado {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cotizador Buyee 🛒</h1>
+  <p>Ingresá el precio en dólares:</p>
+  <input type="number" id="usd" placeholder="Ej: 10.50">
+  <button onclick="calcular()">Calcular en pesos</button>
+
+  <div class="resultado" id="resultado"></div>
+
+  <script>
+    function calcular() {
+      const dolar = 1300; // tu dólar personalizado
+      const fee = 2.30; // fee fijo de Buyee
+      const inputUSD = parseFloat(document.getElementById("usd").value);
+      
+      if (isNaN(inputUSD)) {
+        document.getElementById("resultado").innerText = "Por favor, ingresá un número válido.";
+        return;
+      }
+
+      const totalUSD = inputUSD + fee;
+      const totalARS = totalUSD * dolar;
+
+      document.getElementById("resultado").innerText = 
+        `Total: USD ${totalUSD.toFixed(2)} = $${totalARS.toLocaleString('es-AR')} ARS`;
+    }
+  </script>
+</body>
+</html>
