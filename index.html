@@ -24,10 +24,10 @@
       min-height: 100vh;
       padding: 0;
       text-align: center;
-      position: relative; /* para que las estrellas estén en la capa inferior */
+      position: relative; 
     }
 
-    /* Efecto estrellas brillando */
+    
     .estrellas {
       position: fixed;
       top: 0;
@@ -67,13 +67,13 @@
     }
 
     .container {
-      background-color: rgba(255, 255, 255, 0.5); /* para que se lea mejor el texto */
+      background-color: rgba(255, 255, 255, 0.5); 
       padding: 40px;
       border-radius: 20px;
       max-width: 500px;
       width: 90%;
       box-sizing: border-box;
-      z-index: 1; /* encima de las estrellas */
+      z-index: 1; 
     }
 
     img {
@@ -143,13 +143,13 @@
 </head>
 <body>
 
-  <!-- Parte de las estrellas brillando -->
+  
   <div class="estrellas"></div>
 
   <div class="container">
     <img src="https://i.ibb.co/HTgy72RK/6354.png" alt="logo">
     
-    <p>ejemplo ejemplo ejemplo</p>
+    <p> ¡Cotizador automático! (*≧ω≦)</p>
     <input type="number" id="usd" placeholder="Ej: 10.50">
     <button onclick="calcular()">cotizar</button>
 
