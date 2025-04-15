@@ -4,55 +4,44 @@
   <meta charset="UTF-8">
   <title>Cotizador Buyee</title>
   <style>
-    body {
-      background-image: url('https://i.pinimg.com/originals/2f/49/6b/2f496be9768e20cc5bb632cfa1683a5d.gif');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-      color: white;
-      font-size: 18px; /* Tamaño base más grande */
-      min-height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
-    }
-
-    input, button {
-      padding: 15px;
-      font-size: 18px; /* Botones y campos más grandes */
-      margin: 10px;
-      border-radius: 5px; /* Añadido para darle un toque más suave */
-    }
-
-    .resultado {
-      margin-top: 20px;
-      font-size: 26px; /* Resultado más grande */
-      font-weight: bold;
-    }
-
-    #aclaracion {
-      font-size: 16px;
-      margin-top: 10px;
-      color: #ddd; /* Aclara un poco el texto */
-    }
-
-    h1 {
-      font-size: 40px; /* Hacemos el título más grande */
-      margin-bottom: 30px;
-    }
+   body {
+  background-image: url('https://i.pinimg.com/originals/2f/49/6b/2f496be9768e20cc5bb632cfa1683a5d.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+  color: white;
+  font-size: 18px; /* Aumentamos el tamaño base */
+}
+input, button {
+  padding: 15px;
+  font-size: 18px; /* Aumentamos el tamaño de los botones y campos */
+  margin: 10px;
+}
+.resultado {
+  margin-top: 20px;
+  font-size: 26px; /* Aumentamos el tamaño del resultado */
+  font-weight: bold;
+}
+#aclaracion {
+  font-size: 16px;
+  margin-top: 10px;
+}
 
   </style>
 </head>
 <body>
-  <!-- Aquí reemplazas el título por una imagen -->
-  <img src="https://tu-imagen-de-logo.png" alt="Logo de la store" style="max-width: 300px; width: 100%; height: auto;">
+  <!-- Reemplazamos el título con la imagen del logo -->
+  <img src="https://i.ibb.co/ZbZLRJD/logo.png" alt="Logo de la Store" style="max-width: 300px; width: 100%; height: auto;">
   
-  <p>Ejemplo ejemplo ejemplo</p>
+  <p>ejemplo ejemplo ejemplo</p>
   <input type="number" id="usd" placeholder="Ej: 10.50">
-  <button onclick="calcular()">Cotizar</button>
+  <button onclick="calcular()">cotizar</button>
 
   <div class="resultado" id="resultado"></div>
-  <p id="aclaracion">Este es el precio final con el fee incluido.</p>
+    <p id="aclaracion" style="font-size: 14px; color: #555;"></p>
 
   <script>
     function calcular() {
@@ -62,18 +51,19 @@
       
       if (isNaN(inputUSD)) {
         document.getElementById("resultado").innerText = "Por favor, ingresá un número válido.";
-        document.getElementById("aclaracion").innerText = "";
-        return;
+    document.getElementById("aclaracion").innerText = "";
+    return;
       }
 
       const totalUSD = inputUSD + fee;
       const totalARS = totalUSD * dolar;
 
-      document.getElementById("resultado").innerText = 
-        `Total = $${totalARS.toLocaleString('es-AR')}`;
+document.getElementById("resultado").innerText = 
+    `Total = $${totalARS.toLocaleString('es-AR')} `;
   
-      document.getElementById("aclaracion").innerText = 
-        "Este es el precio final con el fee incluido.";
+  document.getElementById("aclaracion").innerText = 
+    "Este es el precio final con el fee incluido.";
+
     }
   </script>
 </body>
